@@ -5,6 +5,7 @@ import DetailPage from "./pages/DetailPage";
 import Main from "./pages/Main";
 import Update from "./pages/Update";
 import ProductContectProvider from "./context/Product";
+import './App.css'
 
 function App() {
   return (
