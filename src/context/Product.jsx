@@ -44,7 +44,7 @@ const [product,setProduct] =useState([
         id:Math.ceil(Math.random()*500)
 
 
-    },
+    }
 
 
 
@@ -55,7 +55,7 @@ const [product,setProduct] =useState([
 
 
 return(
-    <ProductContect.Provider value={product}>
+    <ProductContect.Provider value={{product}}>
         {props.children}
         
     </ProductContect.Provider>
