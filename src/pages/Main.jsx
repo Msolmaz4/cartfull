@@ -20,7 +20,7 @@ const navi =useNavigate()
         {
           product?.map((el,idx)=>(
             <ProductCard 
-          
+          productNmae={el.name}
             id ={el.id}/>
           ))
         }

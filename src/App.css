@@ -43,3 +43,7 @@
   margin: 100px auto;
   flex-wrap: wrap;
 }
+.pro-card{
+  width: 300px;
+  margin: 2rem;
+}
