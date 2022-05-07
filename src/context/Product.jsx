@@ -53,9 +53,20 @@ const [product,setProduct] =useState([
 ])
 
 
+const add =(name,price,category)=>{
+    product.push({
+        name:name,
+        price:price,
+        category:category,
+        id:Math.ceil(Math.random()*500)
+    })
+    setProduct(product)
+
+}
+
 
 return(
-    <ProductContect.Provider value={{product}}>
+    <ProductContect.Provider value={{product , add}}> 
         {props.children}
         
     </ProductContect.Provider>
