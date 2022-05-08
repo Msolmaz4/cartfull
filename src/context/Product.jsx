@@ -65,8 +65,15 @@ const add =(name,price,category)=>{
 }
 
 
+const deleteP =(id)=>{
+    const newPro =product.filter(el => el.id !=id)
+    setProduct(newPro)
+
+}
+
+
 return(
-    <ProductContect.Provider value={{product , add}}> 
+    <ProductContect.Provider value={{product,add,deleteP}}> 
         {props.children}
         
     </ProductContect.Provider>

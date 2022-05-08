@@ -1,10 +1,14 @@
-import React, { useRef } from 'react'
+import React, { useContext, useRef } from 'react'
 import  {Form,InputGroup,FormControl,Button, FormSelect} from 'react-bootstrap'
 import { useNavigate } from 'react-router-dom'
+import { ProductContect } from '../context/Product'
 
 
 
 const AddProj = () => {
+
+
+  const {add} = useContext(ProductContect)
 
 const navi =useNavigate()
 const inputRef= useRef({
@@ -16,6 +20,13 @@ const inputRef= useRef({
 const handle =(e)=>{
   const name=e.target.name
   inputRef.current[name] =e.target.value
+}
+
+const addItem =()=>{
+  const {name ,price, category} = inputRef.current
+  add(name,price,category)
+  navi('/')
+
 }
 
   return (
@@ -33,7 +44,7 @@ const handle =(e)=>{
         <option value='dairy'>Dairy</option>
 
       </FormSelect>
-      <Button>Add</Button>
+      <Button onClick={addItem}>Add</Button>
       </InputGroup>
 
 
