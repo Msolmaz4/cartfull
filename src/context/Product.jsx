@@ -66,14 +66,25 @@ const add =(name,price,category)=>{
 
 
 const deleteP =(id)=>{
-    const newPro =product.filter(el => el.id !=id)
+    const newPro =product.filter(el => el.id !==id)
     setProduct(newPro)
 
 }
 
 
+const updateProduct = (name,price,category,id) =>{
+    const currentProduct = product.find(el =>el.id ===id )
+    currentProduct.name = name;
+    currentProduct.price = price;
+    currentProduct.category = category;
+    setProduct(product)
+
+
+}
+
+
 return(
-    <ProductContect.Provider value={{product,add,deleteP}}> 
+    <ProductContect.Provider value={{product,add,deleteP,updateProduct}}> 
         {props.children}
         
     </ProductContect.Provider>
